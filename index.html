@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TLA ERP - Construction ERP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">TLA</div>
+          <div>
+            <h1>TLA ERP</h1>
+            <small>Construction Suite</small>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" id="categoryTabs" aria-label="ERP sections"></nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="toolbar">
+          <div>
+            <p class="eyebrow">Spreadsheet interface</p>
+            <h2 id="sectionTitle">Setup Tabs</h2>
+          </div>
+
+          <div class="toolbar-actions">
+            <button id="newRecordBtn" class="secondary-btn" type="button">New Record</button>
+            <button id="duplicateRecordBtn" class="secondary-btn" type="button">Duplicate Record</button>
+            <button id="deleteRowBtn" class="warning-btn" type="button">Delete Record</button>
+            <button id="exportCsvBtn" class="ghost-btn" type="button">Export CSV</button>
+            <button id="exportPdfBtn" class="primary-btn" type="button">Export PDF</button>
+
+            <button id="validateBtn" class="ghost-btn" type="button" style="display:none;">Validate Sheet</button>
+            <button id="saveSheetBtn" class="primary-btn" type="button" style="display:none;">Save Sheet</button>
+            <button id="budgetChangeBtn" class="secondary-btn" type="button" style="display:none;">Add Budget Change</button>
+            <button id="approvalBtn" class="secondary-btn" type="button" style="display:none;">Approve Request</button>
+            <button id="exportBtn" class="ghost-btn" type="button" style="display:none;">Export JSON</button>
+          </div>
+        </header>
+
+        <div id="topbarFilters" class="topbar-filters">
+          <label class="filter-field">
+            <span>Project</span>
+            <select id="projectFilter">
+              <option value="All Projects">All Projects</option>
+              <option value="PR-001">PR-001</option>
+              <option value="PR-002">PR-002</option>
+              <option value="PR-003">PR-003</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="All">All</option>
+              <option value="Draft">Draft</option>
+              <option value="Posted">Posted</option>
+              <option value="Approved">Approved</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span>User Role</span>
+            <select id="userRoleSelect">
+              <option value="Admin">Admin</option>
+              <option value="Accountant">Accountant</option>
+              <option value="Site Manager">Site Manager</option>
+              <option value="Procurement">Procurement</option>
+              <option value="HR">HR</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="module-header">
+          <div id="moduleTabs" class="module-tabs" aria-label="Module tabs"></div>
+        </div>
+
+        <div class="summary-strip" aria-label="Sheet summary">
+          <div class="summary-card">
+            <span>Total Rows</span>
+            <strong id="summaryTotalRows">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Complete</span>
+            <strong id="summaryCompleteRows">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Missing</span>
+            <strong id="summaryMissingRows">0</strong>
+          </div>
+        </div>
+
+        <div class="sheet-panel">
+          <div class="sheet-header-row">
+            <span class="sheet-label" id="selectedModuleLabel">Client</span>
+            <span class="sheet-hint">Spreadsheet style input</span>
+            <span id="sheetStatus" class="sheet-status">Ready</span>
+          </div>
+
+          <div class="sheet-wrapper">
+            <table id="sheetTable">
+              <thead id="sheetHead"></thead>
+              <tbody id="sheetBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <section class="workflow-panel" aria-label="Transaction workflow panel">
+          <div class="workflow-header">
+            <div>
+              <p class="eyebrow">Transaction workflow</p>
+              <h3>Posting and ledger</h3>
+            </div>
+            <div class="workflow-actions">
+              <button id="postEntryBtn" class="primary-btn" type="button">Post Entry</button>
+              <button id="draftEntryBtn" class="secondary-btn" type="button">Mark Draft</button>
+              <button id="createDocBtn" class="ghost-btn" type="button">Create Doc</button>
+              <button id="approveDocBtn" class="ghost-btn" type="button">Approve Doc</button>
+            </div>
+          </div>
+
+          <div class="panel-note">
+            Use Post Entry to move selected rows into the financial ledger. The ledger records the date, reference, party, project, amount and status so users can audit the transaction trail.
+          </div>
+          <div id="ledgerPreview" class="ledger-preview"></div>
+        </section>
+
+        <section class="document-panel" aria-label="Document tracker panel">
+          <div class="workflow-header">
+            <div>
+              <p class="eyebrow">Document control</p>
+              <h3>Document tracker</h3>
+            </div>
+          </div>
+
+          <div class="panel-note">
+            The document tracker shows generated documents, attached files and approval status for faster review across contracts, invoices, orders and approvals.
+          </div>
+          <div id="documentTracker" class="ledger-preview"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
