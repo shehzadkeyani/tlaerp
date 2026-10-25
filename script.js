@@ -58,7 +58,7 @@ const MASTER_RECORDS = {
 
 const ERP_DATA = {
   setup: {
-    label: 'Setup Tabs',
+    label: 'Setup',
     modules: [
       { name: 'Client', columns: ['Client ID', 'Client Name', 'Client Category', 'NTN / CNIC', 'Address', 'Contact Person', 'Contact No.', 'Contact Person Designation'] },
       { name: 'Vendor', columns: ['Vendor ID', 'Vendor Name', 'Vendor Category', 'NTN / CNIC', 'Address', 'Contact Person', 'Contact No.', 'Contact Person Designation'] },
@@ -79,7 +79,7 @@ const ERP_DATA = {
     ]
   },
   transaction: {
-    label: 'Transaction Tabs',
+    label: 'Transaction',
     modules: [
       { name: 'Cash Books', columns: ['Date', 'Trx. Reference No.', 'Cash Account Name', 'Cash Voucher No.', 'Party Name', 'Payee Name', 'Description', 'Receipt', 'Payment', 'Running Balance', 'Project Code', 'Project Phase', 'Activity Code', 'Cost Center', 'Cost Category', 'Prepared/Posted By', 'Remarks'] },
       { name: 'Bank Books', columns: ['Date', 'Trx. Reference No.', 'Bank Account Name', 'Bank Voucher No.', 'Cheque/Txn No.', 'Party Name', 'Payee Name', 'Description', 'Deposit', 'Withdrawal', 'Bank Charges', 'Running Balance', 'IT Withholding', 'Sales Tax Withholding', 'Gross Amount Paid', 'Project Code', 'Project Phase', 'Activity Code', 'Cost Center', 'Cost Category', 'Purchase Ref. No.', 'Reconciliation Ref.', 'Remarks'] },
@@ -99,7 +99,7 @@ const ERP_DATA = {
     ]
   },
   reporting: {
-    label: 'Reporting Tabs',
+    label: 'Reporting',
     modules: [
       { name: 'Customer Ledgers', columns: ['Customer', 'Invoice No.', 'Amount', 'Received', 'Balance', 'Due Date'] },
       { name: 'Project Job wise Receivables', columns: ['Project', 'Job', 'Receivable', 'Collected', 'Outstanding', 'Status'] },
@@ -128,7 +128,7 @@ const ERP_DATA = {
     ]
   },
   documents: {
-    label: 'Documents Tabs',
+    label: 'Documents',
     modules: [
       { name: 'Sales Quotation', columns: ['Doc No.', 'Client', 'Issue Date', 'Valid Until', 'Status', 'Attachment'] },
       { name: 'Sales Order', columns: ['Doc No.', 'Client', 'Issue Date', 'Status', 'Attachment'] },
